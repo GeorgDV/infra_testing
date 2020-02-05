@@ -7,6 +7,8 @@ resource "aws_instance" "web" {
   tags = {
     Name = "My Super Tuper Awesome Learning Machine_!!!"
   }
+
+  user_data = file("${path.module}/ec2-setup.sh")
 }
 
 output "web_id" {
